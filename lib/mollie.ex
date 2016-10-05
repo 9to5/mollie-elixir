@@ -1,0 +1,2 @@
+defmodule Mollie do
+end

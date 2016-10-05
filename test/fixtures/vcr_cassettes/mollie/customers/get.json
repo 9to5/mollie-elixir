@@ -1,0 +1,35 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "TOKEN"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.mollie.nl/v1/customers"
+    },
+    "response": {
+      "body": "{\"totalCount\":1,\"offset\":0,\"count\":1,\"data\":[{\"resource\":\"customer\",\"id\":\"CUSTOMER_ID\",\"mode\":\"test\",\"name\":\"Customer Name\",\"email\":\"email@example.com\",\"locale\":\"nl_NL\",\"metadata\":null,\"recentlyUsedMethods\":[],\"createdDatetime\":\"2016-10-04T08:22:28.0Z\"}]}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Tue, 04 Oct 2016 11:59:05 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "1091",
+        "Connection": "keep-alive",
+        "Vary": "Accept-Encoding",
+        "Content-Security-Policy": "frame-ancestors 'none'",
+        "Strict-Transport-Security": "max-age=15552000; includeSubDomains",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Methods": "GET, POST, HEAD, OPTIONS, DELETE",
+        "Access-Control-Max-Age": "300",
+        "X-Whom": "dc1-web-5"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

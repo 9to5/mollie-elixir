@@ -1,0 +1,35 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "TOKEN"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.mollie.nl/v1/payments/PAYMENT_ID"
+    },
+    "response": {
+      "body": "{\"resource\":\"payment\",\"id\":\"PAYMENT_ID\",\"mode\":\"test\",\"createdDatetime\":\"2016-10-04T12:41:58.0Z\",\"status\":\"open\",\"expiryPeriod\":\"PT14M7S\",\"amount\":\"100.00\",\"description\":\"description\",\"method\":\"ideal\",\"metadata\":null,\"details\":null,\"profileId\":\"PROFILE_ID\",\"customerId\":\"CUSTOMER_ID\",\"links\":{\"paymentUrl\":\"https://www.mollie.com/paymentscreen/ideal/select-issuer/xxxxx\",\"webhookUrl\":\"http://webhookUrl.com\",\"redirectUrl\":\"http://redirectUrl.com\"}}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Tue, 04 Oct 2016 12:42:51 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "463",
+        "Connection": "keep-alive",
+        "Vary": "Accept-Encoding",
+        "Content-Security-Policy": "frame-ancestors 'none'",
+        "Strict-Transport-Security": "max-age=15552000; includeSubDomains",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Methods": "GET, POST, HEAD, OPTIONS, DELETE",
+        "Access-Control-Max-Age": "300",
+        "X-Whom": "dc1-web-5"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

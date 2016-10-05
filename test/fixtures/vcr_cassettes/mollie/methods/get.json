@@ -1,0 +1,35 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "TOKEN"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.mollie.nl/v1/methods"
+    },
+    "response": {
+      "body": "{\"totalCount\":11,\"offset\":0,\"count\":11,\"data\":[{\"id\":\"ideal\",\"description\":\"iDEAL\",\"amount\":{\"minimum\":\"0.36\",\"maximum\":\"50000.00\"},\"image\":{\"normal\":\"https://www.mollie.com/images/payscreen/methods/ideal.png\",\"bigger\":\"https://www.mollie.com/images/payscreen/methods/ideal@2x.png\"}},{\"id\":\"creditcard\",\"description\":\"Creditcard\",\"amount\":{\"minimum\":\"0.32\",\"maximum\":\"1000.00\"},\"image\":{\"normal\":\"https://www.mollie.com/images/payscreen/methods/creditcard.png\",\"bigger\":\"https://www.mollie.com/images/payscreen/methods/creditcard@2x.png\"}},{\"id\":\"mistercash\",\"description\":\"Bancontact\",\"amount\":{\"minimum\":\"0.31\",\"maximum\":\"50000.00\"},\"image\":{\"normal\":\"https://www.mollie.com/images/payscreen/methods/mistercash.png\",\"bigger\":\"https://www.mollie.com/images/payscreen/methods/mistercash@2x.png\"}},{\"id\":\"sofort\",\"description\":\"SOFORT Banking\",\"amount\":{\"minimum\":\"0.31\",\"maximum\":\"5000.00\"},\"image\":{\"normal\":\"https://www.mollie.com/images/payscreen/methods/sofort.png\",\"bigger\":\"https://www.mollie.com/images/payscreen/methods/sofort@2x.png\"}},{\"id\":\"banktransfer\",\"description\":\"Bank transfer\",\"amount\":{\"minimum\":\"0.31\",\"maximum\":\"1000000.00\"},\"image\":{\"normal\":\"https://www.mollie.com/images/payscreen/methods/banktransfer.png\",\"bigger\":\"https://www.mollie.com/images/payscreen/methods/banktransfer@2x.png\"}},{\"id\":\"directdebit\",\"description\":\"SEPA Direct Debit\",\"amount\":{\"minimum\":\"0.55\",\"maximum\":\"250.00\"},\"image\":{\"normal\":\"https://www.mollie.com/images/payscreen/methods/directdebit.png\",\"bigger\":\"https://www.mollie.com/images/payscreen/methods/directdebit@2x.png\"}},{\"id\":\"paypal\",\"description\":\"PayPal\",\"amount\":{\"minimum\":\"0.13\",\"maximum\":\"8000.00\"},\"image\":{\"normal\":\"https://www.mollie.com/images/payscreen/methods/paypal.png\",\"bigger\":\"https://www.mollie.com/images/payscreen/methods/paypal@2x.png\"}},{\"id\":\"bitcoin\",\"description\":\"Bitcoin\",\"amount\":{\"minimum\":\"1.00\",\"maximum\":\"15000.00\"},\"image\":{\"normal\":\"https://www.mollie.com/images/payscreen/methods/bitcoin.png\",\"bigger\":\"https://www.mollie.com/images/payscreen/methods/bitcoin@2x.png\"}},{\"id\":\"podiumcadeaukaart\",\"description\":\"PODIUM Cadeaukaart\",\"amount\":{\"minimum\":\"0.79\",\"maximum\":\"150.00\"},\"image\":{\"normal\":\"https://www.mollie.com/images/payscreen/methods/podiumcadeaukaart.png\",\"bigger\":\"https://www.mollie.com/images/payscreen/methods/podiumcadeaukaart@2x.png\"}},{\"id\":\"paysafecard\",\"description\":\"paysafecard\",\"amount\":{\"minimum\":\"1.00\",\"maximum\":\"999.99\"},\"image\":{\"normal\":\"https://www.mollie.com/images/payscreen/methods/paysafecard.png\",\"bigger\":\"https://www.mollie.com/images/payscreen/methods/paysafecard@2x.png\"}},{\"id\":\"belfius\",\"description\":\"Belfius Direct Net\",\"amount\":{\"minimum\":\"0.31\",\"maximum\":\"50000.00\"},\"image\":{\"normal\":\"https://www.mollie.com/images/payscreen/methods/belfius.png\",\"bigger\":\"https://www.mollie.com/images/payscreen/methods/belfius@2x.png\"}}]}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Tue, 04 Oct 2016 13:03:12 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "2863",
+        "Connection": "keep-alive",
+        "Vary": "Accept-Encoding",
+        "Content-Security-Policy": "frame-ancestors 'none'",
+        "Strict-Transport-Security": "max-age=15552000; includeSubDomains",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Methods": "GET, POST, HEAD, OPTIONS, DELETE",
+        "Access-Control-Max-Age": "300",
+        "X-Whom": "dc1-web-3"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

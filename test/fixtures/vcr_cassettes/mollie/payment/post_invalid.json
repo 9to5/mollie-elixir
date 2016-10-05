@@ -1,0 +1,33 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "TOKEN"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.mollie.nl/v1/payments"
+    },
+    "response": {
+      "body": "{\"error\":{\"type\":\"request\",\"message\":\"The amount is lower than the minimum\",\"field\":\"amount\"}}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Wed, 05 Oct 2016 13:52:51 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "94",
+        "Connection": "keep-alive",
+        "Content-Security-Policy": "frame-ancestors 'none'",
+        "Strict-Transport-Security": "max-age=15552000; includeSubDomains",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Methods": "GET, POST, HEAD, OPTIONS, DELETE",
+        "Access-Control-Max-Age": "300"
+      },
+      "status_code": 422,
+      "type": "ok"
+    }
+  }
+]
