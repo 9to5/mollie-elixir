@@ -1,0 +1,35 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "TOKEN"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.mollie.nl/v1/customers/CUSTOMER_ID/mandates"
+    },
+    "response": {
+      "body": "{\"totalCount\":1,\"offset\":0,\"count\":1,\"data\":[{\"resource\":\"mandate\",\"id\":\"MANDATE_ID\",\"status\":\"valid\",\"method\":\"directdebit\",\"details\":{\"consumerName\":\"T. TEST\",\"consumerAccount\":\"NL17RABO0213698412\",\"consumerBic\":\"TESTNL99\"},\"customerId\":\"CUSTOMER_ID\",\"createdDatetime\":\"2016-10-17T10:11:59.0Z\"}]}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Mon, 17 Oct 2016 10:13:16 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "305",
+        "Connection": "keep-alive",
+        "Vary": "Accept-Encoding",
+        "Content-Security-Policy": "frame-ancestors 'none'",
+        "Strict-Transport-Security": "max-age=15552000; includeSubDomains",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Methods": "GET, POST, HEAD, OPTIONS, DELETE",
+        "Access-Control-Max-Age": "300",
+        "X-Whom": "dc1-web-5"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
