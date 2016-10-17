@@ -36,6 +36,10 @@ defmodule Mollie.Http do
     request(:post, url, params)
   end
 
+  def delete(url) do
+    request(:delete, url)
+  end
+
   defp process_params(url, nil), do: url
   defp process_params(url, params), do: url <> "?" <> URI.encode_query(params)
 

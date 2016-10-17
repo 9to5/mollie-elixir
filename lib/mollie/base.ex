@@ -24,6 +24,14 @@ defmodule Mollie.Base do
     post("#{endpoint}/#{url}", params, struct)
   end
 
+  def delete(url) do
+    url
+    |> Http.delete
+  end
+  def delete(endpoint, url) do
+    delete("#{endpoint}/#{url}")
+  end
+
   defp to_response({:error, error}, _struct) do
     {:error, Error.new(500, error)}
   end
