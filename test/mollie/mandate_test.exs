@@ -5,7 +5,6 @@ defmodule Mollie.MandateTest do
   setup_all do
     ExVCR.Config.cassette_library_dir("test/fixtures/vcr_cassettes/mollie/mandate")
     ExVCR.Config.filter_sensitive_data("Bearer .+", "TOKEN")
-    ExVCR.Config.filter_sensitive_data("(.*)" <> ("MANDATE_ID") <> "(.*)", "\\1MANDATE_ID\\2")
     ExVCR.Config.filter_sensitive_data("(?:\\d{1,3}\\.){3}\\d{1,3}", "0.0.0.0")
     :ok
   end

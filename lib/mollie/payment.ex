@@ -23,4 +23,12 @@ defmodule Mollie.Payment do
            |> Enum.reject(fn {_x, y} -> y == nil end)
     Base.post("payments", data, __MODULE__)
   end
+
+  @spec post(binary, %Mollie.Payment{}) :: {:ok, any} | Error.t
+  def post(customer_id, payment) do
+    data = payment
+           |> Map.from_struct
+           |> Enum.reject(fn {_x, y} -> y == nil end)
+    Base.post("customers/#{customer_id}/payments", data, __MODULE__)
+  end
 end

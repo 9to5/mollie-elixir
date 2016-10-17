@@ -1,0 +1,34 @@
+[
+  {
+    "request": {
+      "body": "amount=0.01&description=refund",
+      "headers": {
+        "Authorization": "TOKEN"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.mollie.nl/v1/payments/PAYMENT_ID/refunds"
+    },
+    "response": {
+      "body": "{\"id\":\"REFUND_ID\",\"payment\":{\"resource\":\"payment\",\"id\":\"PAYMENT_ID\",\"mode\":\"test\",\"createdDatetime\":\"2016-10-17T10:11:49.0Z\",\"status\":\"refunded\",\"paidDatetime\":\"2016-10-17T10:12:01.0Z\",\"amount\":\"0.01\",\"amountRefunded\":\"0.01\",\"amountRemaining\":\"25.00\",\"description\":\"description\",\"method\":\"ideal\",\"metadata\":null,\"details\":{\"consumerName\":\"T. TEST\",\"consumerAccount\":\"NL17RABO0213698412\",\"consumerBic\":\"TESTNL99\"},\"profileId\":\"pfl_ATMMHRNMNN\",\"customerId\":\"CUSTOMER_ID\",\"recurringType\":\"first\",\"links\":{\"redirectUrl\":\"http://redirectUrl.com\",\"refunds\":\"https://api.mollie.nl/v1/payments/PAYMENT_ID/refunds\"}},\"amount\":\"0.01\",\"status\":\"refunded\",\"refundedDatetime\":\"2016-10-17T11:46:15.0Z\",\"description\":\"refund\",\"links\":{\"self\":\"https://api.mollie.nl/v1/payments/PAYMENT_ID/refunds/REFUND_ID\"}}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Mon, 17 Oct 2016 11:46:15 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "813",
+        "Connection": "keep-alive",
+        "Content-Security-Policy": "frame-ancestors 'none'",
+        "Strict-Transport-Security": "max-age=15552000; includeSubDomains",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Methods": "GET, POST, HEAD, OPTIONS, DELETE",
+        "Access-Control-Max-Age": "300",
+        "X-Whom": "dc1-web-5"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  }
+]

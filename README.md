@@ -1,31 +1,31 @@
 # Mollie for Elixir
 
 **TODO: implement endpoints**
-- [ ] Payments API
+- [x] Payments API
   - [x] `POST /v1/payments`
-  - [x] `GET /v1/payments/*``
+  - [x] `GET /v1/payments/*`
   - [x] `GET /v1/payments`
-  - [ ] `POST /v1/payments/*/refunds`
-  - [ ] `GET /v1/payments/*/refunds/*``
-  - [ ] `DELETE /v1/payments/*/refunds/*``
-  - [ ] `GET /v1/payments/*/refunds`
+  - [x] `POST /v1/payments/*/refunds`
+  - [x] `GET /v1/payments/*/refunds/*`
+  - [x] `DELETE /v1/payments/*/refunds/*`
+  - [x] `GET /v1/payments/*/refunds`
 - [x] Methods API
   - [x] `GET /v1/methods`
   - [x] `GET /v1/methods/*`
 - [x] Issuers API
   - [x] `GET /v1/issuers`
   - [x] `GET /v1/issuers/*`
-- [ ] Refunds API
-  - [ ] `GET /v1/refunds`
-- [ ] Customers API
+- [x] Refunds API
+  - [x] `GET /v1/refunds`
+- [x] Customers API
   - [x] `POST /v1/customers`
   - [x] `GET /v1/customers/*`
-  - [ ] `POST /v1/customers/*`
+  - [x] `POST /v1/customers/*`
   - [x] `GET /v1/customers`
-  - [ ] `POST /v1/customers/*/payments`
-  - [ ] `GET /v1/customers/*/payments`
+  - [x] `POST /v1/customers/*/payments`
+  - [x] `GET /v1/customers/*/payments`
 - [ ] Mandates API
-  - [ ] `POST /v1/customers/*/mandates`
+  - [ ] `POST /v1/customers/*/mandates` - not allowed to create mandate
   - [x] `GET /v1/customers/*/mandates/*`
   - [x] `DELETE /v1/customers/*/mandates/*`
   - [x] `GET /v1/customers/*/mandates`

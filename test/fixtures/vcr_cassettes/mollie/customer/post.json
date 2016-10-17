@@ -1,0 +1,34 @@
+[
+  {
+    "request": {
+      "body": "email=email@example.com&name=Test+Name",
+      "headers": {
+        "Authorization": "TOKEN"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.mollie.nl/v1/customers"
+    },
+    "response": {
+      "body": "{\"resource\":\"customer\",\"id\":\"CUSTOMER_ID\",\"mode\":\"test\",\"name\":\"Test Name\",\"email\":\"email@example.com\",\"locale\":null,\"metadata\":null,\"recentlyUsedMethods\":[],\"createdDatetime\":\"2016-10-17T12:34:25.0Z\"}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Mon, 17 Oct 2016 12:34:25 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "204",
+        "Connection": "keep-alive",
+        "Content-Security-Policy": "frame-ancestors 'none'",
+        "Strict-Transport-Security": "max-age=15552000; includeSubDomains",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Methods": "GET, POST, HEAD, OPTIONS, DELETE",
+        "Access-Control-Max-Age": "300",
+        "X-Whom": "dc1-web-3"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  }
+]

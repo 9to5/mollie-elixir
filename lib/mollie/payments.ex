@@ -12,4 +12,9 @@ defmodule Mollie.Payments do
   def get do
     Base.get("payments", [%Mollie.Payment{}])
   end
+
+  @spec get(binary) :: {:ok, t} | Error.t
+  def get(customer_id) do
+    Base.get("customers/#{customer_id}/payments", [%Mollie.Payment{}])
+  end
 end

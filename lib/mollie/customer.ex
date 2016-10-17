@@ -14,8 +14,19 @@ defmodule Mollie.Customer do
     Base.get("customers/#{customer_id}", __MODULE__)
   end
 
-  @spec post(binary, binary, binary) :: {:ok, any} | Error.t
-  def post(name, email, locale) do
-    Base.post("customers", [{:name, name}, {:email, email}, {:locale, locale}], __MODULE__)
+  @spec post(%Mollie.Customer{}) :: {:ok, any} | Error.t
+  def post(customer) do
+    data = customer
+           |> Map.from_struct
+           |> Enum.reject(fn {_x, y} -> y == nil end)
+    Base.post("customers", data, __MODULE__)
+  end
+
+  @spec update(binary, %Mollie.Customer{}) :: {:ok, any} | Error.t
+  def update(customer_id, customer) do
+    data = customer
+           |> Map.from_struct
+           |> Enum.reject(fn {_x, y} -> y == nil end)
+    Base.post("customers/#{customer_id}", data, __MODULE__)
   end
 end
