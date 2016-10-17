@@ -49,5 +49,15 @@ defmodule Mollie.PaymentTest do
         assert {:error, %Mollie.Error{code: 422, reason: "The amount is lower than the minimum"}} = response
       end
     end
+
+    test "a recurring Mollie.Payment" do
+      use_cassette "post_recurring" do
+        payment = %Mollie.Payment{amount: "100.00", description: "description", recurringType: "recurring",
+        customerId: "cst_AfabU898aW"}
+        response = Mollie.Payment.post(payment)
+        assert {:ok, payment} = response
+        assert payment.id == "PAYMENT_ID"
+      end
+    end
   end
 end
