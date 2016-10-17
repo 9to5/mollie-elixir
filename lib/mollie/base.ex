@@ -34,8 +34,8 @@ defmodule Mollie.Base do
   defp to_response({:ok, %Response{status_code: 200, body: data}}, s) do
     {:ok, struct(s, data)}
   end
-  defp to_response({:ok, %Response{status_code: 201, body: body}}, s) do
-    {:ok, struct(s, body)}
+  defp to_response({:ok, %Response{status_code: 201, body: data}}, s) do
+    {:ok, struct(s, data)}
   end
   defp to_response({:ok, %Response{status_code: status, body: %{error: %{message: body}}}}, _struct) do
     {:error, Error.new(status, body)}
