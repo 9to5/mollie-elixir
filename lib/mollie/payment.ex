@@ -21,5 +21,6 @@ defmodule Mollie.Payment do
     data = payment
            |> Map.from_struct
            |> Enum.reject(fn {_x, y} -> y == nil end)
+    Base.post("payments", data, __MODULE__)
   end
 end
