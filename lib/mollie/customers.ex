@@ -4,14 +4,12 @@ defmodule Mollie.Customers do
 
   @type t :: [Mollie.Customer]
 
-  @endpoint "customers"
-
   @moduledoc """
   This module defines the actions that can be taken on the Customers endpoint.
   """
 
   @spec get :: {:ok, t} | Error.t
   def get do
-    Base.get(@endpoint, [%Mollie.Customer{}])
+    Base.get("customers", [%Mollie.Customer{}])
   end
 end

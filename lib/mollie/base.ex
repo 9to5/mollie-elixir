@@ -11,25 +11,16 @@ defmodule Mollie.Base do
     |> Http.get
     |> to_response(struct)
   end
-  def get(endpoint, url, struct) do
-    get("#{endpoint}/#{url}", struct)
-  end
 
   def post(url, params, struct) do
     url
     |> Http.post(params)
     |> to_response(struct)
   end
-  def post(endpoint, url, params, struct) do
-    post("#{endpoint}/#{url}", params, struct)
-  end
 
   def delete(url) do
     url
     |> Http.delete
-  end
-  def delete(endpoint, url) do
-    delete("#{endpoint}/#{url}")
   end
 
   defp to_response({:error, error}, _struct) do
