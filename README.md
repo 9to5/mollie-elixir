@@ -82,3 +82,14 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
       [applications: [:mollie]]
     end
     ```
+
+## Configuration
+
+You will need to set the following configuration variables in your `config/config.exs` file:
+
+```elixir
+use Mix.Config
+
+config :mollie,
+  api_key: System.get_env("MOLLIE_API_KEY")
+```
