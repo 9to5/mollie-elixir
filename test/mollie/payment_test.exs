@@ -17,6 +17,8 @@ defmodule Mollie.PaymentTest do
         response = Mollie.Payment.get(payment_id)
         assert {:ok, payment} = response
         assert payment.id == "PAYMENT_ID"
+        assert payment.links == %{paymentUrl: "https://www.mollie.com/paymentscreen/ideal/select-issuer/xxxxx",
+                                  redirectUrl: "http://redirectUrl.com", webhookUrl: "http://webhookUrl.com"}
       end
     end
   end
