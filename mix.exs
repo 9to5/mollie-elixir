@@ -30,7 +30,7 @@ defmodule Mollie.Mixfile do
   defp deps do
     [
       {:hackney, "~> 1.6"},
-      {:poison, "~> 2.2.0"},
+      {:poison, "~> 3.1"},
       {:mix_test_watch, "~> 0.2", only: :dev},
       {:exvcr, "~> 0.7", only: :test},
     ]
