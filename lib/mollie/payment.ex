@@ -3,10 +3,17 @@ defmodule Mollie.Payment do
   alias Mollie.Error
 
   defstruct [:id, :amount, :description, :redirectUrl, :webhookUrl, :method, :metadata, :locale, :recurringType,
-             :customerId, :mandateId, :status, :links]
+             :customerId, :mandateId, :issuer, :profileId, :testmode, :applicationFee, :status, :links, :mode,
+             :createDatetime, :paidDatetime, :cancelledDatetime, :expiredDatetime, :expiryPeriod, :amountRefunded,
+             :amountRemaining, :countryCode, :settlementId, :details]
+
   @type t :: %__MODULE__{id: binary, amount: binary, description: binary, redirectUrl: binary, webhookUrl: binary,
-                         method: binary, locale: binary, recurringType: binary, customerId: binary, status: binary,
-                         links: %{Atom => binary}}
+                         method: binary, metadata: binary, locale: binary, recurringType: binary, customerId: binary,
+                         mandateId: binary, issuer: binary, profileId: binary, testmode: binary, applicationFee: binary,
+                         status: binary, links: %{Atom => binary}, mode: binary, createDatetime: binary,
+                         paidDatetime: binary, cancelledDatetime: binary, expiredDatetime: binary, expiryPeriod: binary,
+                         amountRefunded: binary, amountRemaining: binary, countryCode: binary, settlementId: binary,
+                         details: binary}
 
   @moduledoc """
   This module defines the actions that can be taken on the Payment endpoint.
