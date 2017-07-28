@@ -1,0 +1,34 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "TOKEN"
+      },
+      "method": "delete",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.mollie.nl/v1/customers/CUSTOMER_ID/subscriptions/SUBSCRIPTION_ID"
+    },
+    "response": {
+      "body": "{\"resource\":\"subscription\",\"id\":\"SUBSCRIPTION_ID\",\"customerId\":\"CUSTOMER_ID\",\"mode\":\"test\",\"createdDatetime\":\"2017-07-28T09:10:12.0Z\",\"status\":\"cancelled\",\"amount\":\"100.00\",\"description\":\"description\",\"method\":null,\"times\":null,\"interval\":\"1 month\",\"startDate\":\"2017-07-28\",\"cancelledDatetime\":\"2017-07-28T09:14:12.0Z\",\"links\":{\"webhookUrl\":null}}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Fri, 28 Jul 2017 09:14:12 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "349",
+        "Vary": "Accept-Encoding",
+        "Content-Security-Policy": "frame-ancestors 'none'",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Methods": "GET, POST, HEAD, OPTIONS, DELETE",
+        "Access-Control-Max-Age": "300",
+        "X-Whom": "dc1-web-3",
+        "Strict-Transport-Security": "max-age=15552000; includeSubDomains"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

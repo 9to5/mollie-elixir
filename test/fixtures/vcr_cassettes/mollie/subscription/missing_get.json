@@ -1,0 +1,32 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Authorization": "TOKEN"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.mollie.nl/v1/customers/CUSTOMER_ID/subscriptions/sub_invalid"
+    },
+    "response": {
+      "body": "{\"error\":{\"type\":\"request\",\"message\":\"The subscription id is invalid\"}}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Fri, 28 Jul 2017 09:16:04 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "71",
+        "Content-Security-Policy": "frame-ancestors 'none'",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Methods": "GET, POST, HEAD, OPTIONS, DELETE",
+        "Access-Control-Max-Age": "300",
+        "Strict-Transport-Security": "max-age=15552000; includeSubDomains"
+      },
+      "status_code": 404,
+      "type": "ok"
+    }
+  }
+]

@@ -29,11 +29,11 @@
   - [x] `GET /v1/customers/*/mandates/*`
   - [x] `DELETE /v1/customers/*/mandates/*`
   - [x] `GET /v1/customers/*/mandates`
-- [ ] Subscriptions
-  - [ ] `POST /v1/customers/*/subscriptions`
-  - [ ] `GET /v1/customers/*/subscriptions/*`
-  - [ ] `GET /v1/customers/*/subscriptions`
-  - [ ] `DELETE /v1/customers/*/subscriptions/*`
+- [x] Subscriptions
+  - [x] `POST /v1/customers/*/subscriptions`
+  - [x] `GET /v1/customers/*/subscriptions/*`
+  - [x] `GET /v1/customers/*/subscriptions`
+  - [x] `DELETE /v1/customers/*/subscriptions/*`
 - [ ] Connect
   - [ ] `GET /oauth2/authorize`
   - [ ] `GET /oauth2/tokens`

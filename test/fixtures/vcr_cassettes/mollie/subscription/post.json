@@ -1,0 +1,33 @@
+[
+  {
+    "request": {
+      "body": "amount=100.00&description=description&interval=1+month",
+      "headers": {
+        "Authorization": "TOKEN"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.mollie.nl/v1/customers/CUSTOMER_ID/subscriptions"
+    },
+    "response": {
+      "body": "{\"resource\":\"subscription\",\"id\":\"SUBSCRIPTION_ID\",\"customerId\":\"CUSTOMER_ID\",\"mode\":\"test\",\"createdDatetime\":\"2017-07-28T09:19:29.0Z\",\"status\":\"active\",\"amount\":\"100.00\",\"description\":\"description\",\"method\":null,\"times\":null,\"interval\":\"1 month\",\"startDate\":\"2017-07-28\",\"cancelledDatetime\":null,\"links\":{\"webhookUrl\":null}}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Fri, 28 Jul 2017 09:19:29 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "326",
+        "Content-Security-Policy": "frame-ancestors 'none'",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Methods": "GET, POST, HEAD, OPTIONS, DELETE",
+        "Access-Control-Max-Age": "300",
+        "X-Whom": "dc1-web-3",
+        "Strict-Transport-Security": "max-age=15552000; includeSubDomains"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  }
+]
