@@ -65,6 +65,15 @@ defmodule Mollie.Http do
 
   @spec authorization_header() :: {:Authorization, binary}
   defp authorization_header do
-    {:Authorization, "Bearer #{Application.get_env(:mollie, :api_key)}"}
+    {:Authorization, "Bearer #{api_key()}"}
+  end
+
+  defp api_key do
+    {:ok, key} = Application.fetch_env(:mollie, :api_key)
+
+    case key do
+      {:system, env_var} when is_binary(env_var) -> System.get_env(env_var)
+      name -> name
+    end
   end
 end

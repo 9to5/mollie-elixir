@@ -91,5 +91,5 @@ You will need to set the following configuration variables in your `config/confi
 use Mix.Config
 
 config :mollie,
-  api_key: System.get_env("MOLLIE_API_KEY")
+  api_key: {:system, "MOLLIE_API_KEY" } # set environment variable MOLLIE_API_KEY
 ```
