@@ -9,7 +9,10 @@ defmodule Mollie.Subscriptions do
   """
 
   @spec get(binary) :: {:ok, t} | Error.t
-  def get(customer_id) do
-    Base.get("customers/#{customer_id}/subscriptions", [%Mollie.Subscription{}])
+  def get(customer_id), do: Base.default_config |> get(customer_id)
+
+  @spec get(%Mollie.Config{}, binary) :: {:ok, t} | Error.t
+  def get(%Mollie.Config{} = config, customer_id) do
+    Base.get("customers/#{customer_id}/subscriptions", [%Mollie.Subscription{}], config)
   end
 end

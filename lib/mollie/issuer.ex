@@ -10,7 +10,10 @@ defmodule Mollie.Issuer do
   """
 
   @spec get(binary) :: {:ok, t} | Error.t
-  def get(method_id) do
-    Base.get("issuers/#{method_id}", __MODULE__)
+  def get(method_id), do: Base.default_config |> get(method_id)
+
+  @spec get(%Mollie.Config{}, binary) :: {:ok, t} | Error.t
+  def get(%Mollie.Config{} = config, method_id) do
+    Base.get("issuers/#{method_id}", __MODULE__, config)
   end
 end

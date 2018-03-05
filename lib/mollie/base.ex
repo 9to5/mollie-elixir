@@ -6,21 +6,38 @@ defmodule Mollie.Base do
 
   @moduledoc false
 
-  def get(url, struct) do
+  def get(url, struct, config) do
     url
-    |> Http.get
+    |> Http.get(config.api_key)
     |> to_response(struct)
   end
 
-  def post(url, params, struct) do
+  def post(url, params, struct, config) do
     url
-    |> Http.post(params)
+    |> Http.post(params, config.api_key)
     |> to_response(struct)
   end
 
-  def delete(url) do
+  def delete(url, config) do
     url
-    |> Http.delete
+    |> Http.delete(config.api_key)
+  end
+
+  def default_config() do
+    %Mollie.Config{id: :default, api_key: api_key_from_env()}
+  end
+
+  defp api_key_from_env() do
+    {:ok, key} = Application.fetch_env(:mollie, :api_key)
+
+    case key do
+      {:system, env_var} when is_binary(env_var) ->
+        case System.get_env(env_var) do
+          nil -> "TOKEN"
+          api_key -> api_key
+        end
+      name -> name
+    end
   end
 
   defp to_response({:error, error}, _struct) do

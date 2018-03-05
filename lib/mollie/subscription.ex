@@ -13,20 +13,29 @@ defmodule Mollie.Subscription do
   """
 
   @spec get(binary, binary) :: {:ok, t} | Error.t
-  def get(customer_id, subscription_id) do
-    Base.get("customers/#{customer_id}/subscriptions/#{subscription_id}", __MODULE__)
+  def get(customer_id, subscription_id), do: Base.default_config |> get(customer_id, subscription_id)
+
+  @spec get(%Mollie.Config{}, binary, binary) :: {:ok, t} | Error.t
+  def get(%Mollie.Config{} = config, customer_id, subscription_id) do
+    Base.get("customers/#{customer_id}/subscriptions/#{subscription_id}", __MODULE__, config)
   end
 
   @spec post(binary, %Mollie.Subscription{}) :: {:ok, any} | Error.t
-  def post(customer_id, subscription) do
+  def post(customer_id, subscription), do: Base.default_config |> post(customer_id, subscription)
+
+  @spec post(%Mollie.Config{}, binary, %Mollie.Subscription{}) :: {:ok, any} | Error.t
+  def post(%Mollie.Config{} = config, customer_id, subscription) do
     data = subscription
            |> Map.from_struct
            |> Enum.reject(fn {_x, y} -> y == nil end)
-    Base.post("customers/#{customer_id}/subscriptions", data, __MODULE__)
+    Base.post("customers/#{customer_id}/subscriptions", data, __MODULE__, config)
   end
 
   @spec cancel(binary, binary) :: {:ok, t} | Error.t
-  def cancel(customer_id, subscription_id) do
-    Base.delete("customers/#{customer_id}/subscriptions/#{subscription_id}")
+  def cancel(customer_id, subscription_id), do: Base.default_config |> cancel(customer_id, subscription_id)
+
+  @spec cancel(%Mollie.Config{}, binary, binary) :: {:ok, t} | Error.t
+  def cancel(%Mollie.Config{} = config, customer_id, subscription_id) do
+    Base.delete("customers/#{customer_id}/subscriptions/#{subscription_id}", config)
   end
 end

@@ -5,13 +5,13 @@ defmodule Mollie.Http do
   @moduledoc false
   @base_url "https://api.mollie.nl/v1/"
 
-  @spec request(atom, binary, any, [{binary, binary}], Keyword.t) :: {:ok, Response.t} | {:error, Error.t}
-  def request(method, url, body \\ "", headers \\ [], opts \\ []) do
-    url = url |> process_url |> process_params(opts[:params])
-    headers = process_request_headers(headers)
-    body = encode_request_body(body)
+  @spec request(atom, binary, any, any) :: {:ok, Response.t} | {:error, Error.t}
+  def request(method, url, body \\ "", api_key \\ nil) do
+    url = url |> process_url
+    headers = api_key |> get_request_header()
+    body = body |> encode_request_body()
 
-    case :hackney.request(method, url, headers, body, opts) do
+    case :hackney.request(method, url, headers, body, []) do
       {:ok, 500, _headers, _client} ->
         {:error, Error.new(500, "Internal Server Error")}
       {:ok, status, headers, client} ->
@@ -28,20 +28,17 @@ defmodule Mollie.Http do
     end
   end
 
-  def get(url) do
-    request(:get, url)
+  def get(url, api_key) do
+    request(:get, url, "", api_key)
   end
 
-  def post(url, params) do
-    request(:post, url, params)
+  def post(url, params, api_key) do
+    request(:post, url, params, api_key)
   end
 
-  def delete(url) do
-    request(:delete, url)
+  def delete(url, api_key) do
+    request(:delete, url, "", api_key)
   end
-
-  defp process_params(url, nil), do: url
-  defp process_params(url, params), do: url <> "?" <> URI.encode_query(params)
 
   @spec process_url(binary) :: binary
   defp process_url(url) do
@@ -56,24 +53,7 @@ defmodule Mollie.Http do
   defp encode_request_body([]), do: ""
   defp encode_request_body(l) when is_list(l), do: {:form, l}
 
-  defp process_request_headers(headers) when is_map(headers) do
-    Enum.into(headers, [authorization_header()])
-  end
-  defp process_request_headers(_headers) do
-    Enum.into(%{}, [authorization_header()])
-  end
-
-  @spec authorization_header() :: {:Authorization, binary}
-  defp authorization_header do
-    {:Authorization, "Bearer #{api_key()}"}
-  end
-
-  defp api_key do
-    {:ok, key} = Application.fetch_env(:mollie, :api_key)
-
-    case key do
-      {:system, env_var} when is_binary(env_var) -> System.get_env(env_var)
-      name -> name
-    end
+  defp get_request_header(key) do
+    [{:Authorization, "Bearer #{key}"}]
   end
 end

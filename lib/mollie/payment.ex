@@ -21,23 +21,32 @@ defmodule Mollie.Payment do
   """
 
   @spec get(binary) :: {:ok, t} | Error.t
-  def get(payment_id) do
-    Base.get("payments/#{payment_id}", __MODULE__)
+  def get(payment_id), do: Base.default_config |> get(payment_id)
+
+  @spec get(%Mollie.Config{}, binary) :: {:ok, t} | Error.t
+  def get(%Mollie.Config{} = config, payment_id) do
+    Base.get("payments/#{payment_id}", __MODULE__, config)
   end
 
   @spec post(%Mollie.Payment{}) :: {:ok, any} | Error.t
-  def post(payment) do
+  def post(payment), do: Base.default_config |> post(payment)
+
+  @spec post(%Mollie.Config{}, %Mollie.Payment{}) :: {:ok, any} | Error.t
+  def post(%Mollie.Config{} = config, payment) do
     data = payment
            |> Map.from_struct
            |> Enum.reject(fn {_x, y} -> y == nil end)
-    Base.post("payments", data, __MODULE__)
+    Base.post("payments", data, __MODULE__, config)
   end
 
   @spec post(binary, %Mollie.Payment{}) :: {:ok, any} | Error.t
-  def post(customer_id, payment) do
+  def post(customer_id, payment), do: Base.default_config |> post(customer_id, payment)
+
+  @spec post(%Mollie.Config{}, binary, %Mollie.Payment{}) :: {:ok, any} | Error.t
+  def post(%Mollie.Config{} = config, customer_id, payment) do
     data = payment
            |> Map.from_struct
            |> Enum.reject(fn {_x, y} -> y == nil end)
-    Base.post("customers/#{customer_id}/payments", data, __MODULE__)
+    Base.post("customers/#{customer_id}/payments", data, __MODULE__, config)
   end
 end
