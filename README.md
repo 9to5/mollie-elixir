@@ -93,3 +93,10 @@ use Mix.Config
 config :mollie,
   api_key: {:system, "MOLLIE_API_KEY" } # set environment variable MOLLIE_API_KEY
 ```
+
+or
+
+```elixir
+%Mollie.Config{id: :my_config, api_key: "<key-here>"}
+|> Mollie.Methods.get()
+```
