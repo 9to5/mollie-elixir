@@ -18,6 +18,7 @@ defmodule Mollie.MandateTest do
         response = Mollie.Mandate.get(customer_id, mandate_id)
         assert {:ok, mandate} = response
         assert mandate.id == "MANDATE_ID"
+        assert mandate.details.consumerAccount == "NL17RABO0213698412"
       end
     end
   end
