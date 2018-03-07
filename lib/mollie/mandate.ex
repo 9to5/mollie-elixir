@@ -2,10 +2,9 @@ defmodule Mollie.Mandate do
   alias Mollie.Base
   alias Mollie.Error
 
-  defstruct [:id, :method, :consumerName, :consumerAccount, :consumerBic, :signatureDate, :mandateReference, :status,
-             :details]
-  @type t :: %__MODULE__{id: binary, method: binary, consumerName: binary, consumerAccount: binary, consumerBic: binary,
-                         signatureDate: binary, mandateReference: binary, status: binary, details: %{Atom => binary}}
+  defstruct [:id, :method, :signatureDate, :mandateReference, :status, :details]
+  @type t :: %__MODULE__{id: binary, method: binary, signatureDate: binary, mandateReference: binary, status: binary,
+                         details: %{Atom => binary}}
 
   @moduledoc """
   This module defines the actions that can be taken on the Mandate endpoint.
