@@ -4,7 +4,7 @@ defmodule Mollie.Mixfile do
   def project do
     [app: :mollie,
      version: "0.1.0",
-     elixir: "~> 1.3",
+     elixir: "~> 1.10",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps()]
@@ -14,7 +14,9 @@ defmodule Mollie.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:hackney, :poison, :logger]]
+    [
+      extra_applications: [:logger]
+    ]
   end
 
   # Dependencies can be Hex packages:
@@ -29,8 +31,8 @@ defmodule Mollie.Mixfile do
   defp deps do
     [
       {:hackney, "~> 1.6"},
-      {:poison, "~> 3.1"},
-      {:mix_test_watch, "~> 0.2", only: :dev},
+      {:jason, "~> 1.0"},
+      {:mix_test_watch, "~> 1.0", only: :dev, runtime: false},
       {:exvcr, "~> 0.7", only: :test},
     ]
   end
